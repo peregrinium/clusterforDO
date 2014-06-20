@@ -1,0 +1,11 @@
+[Unit]
+Description=Etcd server
+After=etcd.service
+Before=fleet.service
+
+[Service]
+ExecStart=/usr/bin/docker -d
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

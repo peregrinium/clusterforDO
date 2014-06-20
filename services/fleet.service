@@ -1,0 +1,13 @@
+[Unit]
+Description=Fleet server
+After=network.target
+After=etcd.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fleet
+ExecStop=/usr/bin/killall fleet
+TimeoutSec=300
+
+[Install]
+WantedBy=multi-user.target

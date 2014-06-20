@@ -1,0 +1,12 @@
+[Unit]
+Description=Etcd server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/etcd
+ExecStop=/usr/bin/killall etcd
+TimeoutSec=300
+
+[Install]
+WantedBy=multi-user.target
