@@ -56,6 +56,8 @@ xxxxxxx....         x.x.x.x     [your metadata]
 ```
 Repeat this for every server you want to add to the cluster (with the same discovery_url, or else you are creating different clusters). You should see more lines when you list the machines after adding more nodes to the cluster.
 
+**_If you have configured the entire cluster, encrypt or remove `ssh/rsa_id`._**
+
 What does the script do?
 ----
 The script is based on fabric, which basically makes ssh connections to a machine and executes defined commands. The script does the following.
@@ -91,9 +93,11 @@ Parameters:
 #### ssh keys
 ssh keys are generated at your computer the first time you run this script. The script checks if `rsa_id` and `rsa_id.pub` contain `"UNGENERATED"`, if so it generates new keys. You can use keys you have generated yourself by just entering them into the file. The script will never touch actual keys.
 
+**_If you have configured the entire cluster, encrypt or remove `ssh/rsa_id`._**
+
 #### services
 The `services` folder contains service files for systemd, these are copied directly and not parsed. If you need to edit these, and you probably dont, go ahead. 
-**_If you have configured the entire cluster, encrypt or remove `rsa_id`._**
+
 
 How do I use my new fancy pants cluster?
 ----
